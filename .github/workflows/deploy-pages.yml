@@ -1,3 +1,15 @@
+# GitHub Pages Deployment Workflow
+# 
+# This workflow automatically builds and deploys your site to GitHub Pages.
+# It works for both static sites and sites that require a build step.
+# 
+# Features:
+# - Auto-detects if your project needs building (looks for package.json)
+# - Supports multiple frameworks (React, Vue, Next.js, Jekyll, etc.)
+# - Intelligently finds build output directory (dist, build, out, _site)
+# - Caches Node.js dependencies for faster builds
+# - Handles errors gracefully
+#
 name: Deploy to GitHub Pages
 
 # Trigger the workflow on push to main branch
