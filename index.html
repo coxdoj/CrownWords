@@ -6,6 +6,13 @@
   <title>Crown Words Labs · Word · Wealth · Worship</title>
   <meta name="theme-color" content="#0B0F14">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/crown-words-labs.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/crown-words-labs.png">
+  <meta property="og:title" content="Crown Words Labs — Word · Wealth · Worship">
+  <meta property="og:description" content="Faith-led tools by David Kwagala: Crown Words, Eternal Investment Tracker, Worship Companion.">
+  <meta property="og:image" content="https://cxxodj.github.io/assets/crown-words-labs.png">
+  <meta property="og:url" content="https://cxxodj.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
   <header class="hero">
@@ -15,7 +22,7 @@
       <nav class="hero__nav">
         <a href="#subs">Subscriptions</a>
         <a href="#about">About</a>
-        <a href="mailto:contact@example.com">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
     <h1 class="hero__title">Word · Wealth · Worship</h1>
@@ -31,14 +38,12 @@
         <p class="small">Daily words, devotion prompts, and declarations.</p>
         <a class="btn btn-primary" target="_self" rel="noopener" href="https://buy.stripe.com/eVqcN70fu5chfNb1Yz0M00">Subscribe · €5/month</a>
       </article>
-
       <article class="card" role="listitem">
         <img src="assets/angel.png" alt="" class="card__icon">
         <h3>Eternal Investment Tracker</h3>
         <p class="small">Stewardship tools for cashflow, goals, and giving.</p>
         <a class="btn btn-primary" target="_self" rel="noopener" href="https://buy.stripe.com/6oUdRb5zO7kp58xbz90M01">Subscribe · €7/month</a>
       </article>
-
       <article class="card" role="listitem">
         <img src="assets/angel.png" alt="" class="card__icon">
         <h3>Worship Companion</h3>
@@ -59,8 +64,8 @@
       <span>GOD’S KINGDOM — Established Beyond Scope · Powered by Jesus Christ</span>
     </div>
     <div class="footer__links">
-      <a href="#" aria-disabled="true">Privacy (coming soon)</a>
-      <a href="#" aria-disabled="true">Terms (coming soon)</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
   </footer>
 
@@ -73,14 +78,10 @@
     'John 4:24 — God is Spirit; worship in Spirit and truth.',
     'Philippians 4:13 — I can do all things through Christ who strengthens me.'
   ];
-  let i = 0;
+  let i = Math.floor(Math.random()*verses.length);
   const el = document.getElementById('scripture');
-  function showVerse(){
-    el.textContent = verses[i % verses.length];
-    i++;
-  }
-  showVerse();
-  setInterval(showVerse, 8000);
+  function showVerse(){ el.textContent = verses[i % verses.length]; i++; }
+  showVerse(); setInterval(showVerse, 8000);
   </script>
 </body>
 </html>

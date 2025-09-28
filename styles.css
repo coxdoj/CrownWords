@@ -19,7 +19,7 @@ body{margin:0;background:linear-gradient(180deg,#0b0f14,#0e141b);color:var(--fg)
 .card .small{color:var(--muted);margin:0 0 14px}
 .card__icon{height:36px;opacity:.95;filter:drop-shadow(0 0 6px rgba(255,215,0,.18))}
 .about{margin-top:16px}
-.btn{display:inline-block;padding:12px 20px;border-radius:40px;text-decoration:none;font-weight:700}
+.btn{display:inline-block;padding:12px 20px;border-radius:40px;text-decoration:none;font-weight:700;transition:transform .12s ease, box-shadow .12s ease}
 .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#0b0f14;box-shadow:0 6px 18px rgba(46,204,113,.35)}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(46,204,113,.45)}
 .site-footer{border-top:1px solid rgba(255,255,255,.06);padding:18px 16px;margin-top:28px;color:#b5c4d1}
