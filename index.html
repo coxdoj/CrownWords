@@ -1,12 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crown Words Labs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crown Words Labs · Word · Wealth · Worship</title>
+  <meta name="theme-color" content="#0B0F14">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to Crown Words Labs</h1>
-    <p>This is a sample HTML page to initialize the repository.</p>
+  <header class="hero">
+    <div class="hero__bar">
+      <img src="assets/dk-logo.png" alt="David Kwagala" class="hero__logo hero__logo--left">
+      <img src="assets/crown-words-labs.png" alt="Crown Words Labs" class="hero__logo hero__logo--center">
+      <nav class="hero__nav">
+        <a href="#subs">Subscriptions</a>
+        <a href="#about">About</a>
+        <a href="mailto:contact@example.com">Contact</a>
+      </nav>
+    </div>
+    <h1 class="hero__title">Word · Wealth · Worship</h1>
+    <p class="hero__tag">God’s Kingdom — Established Beyond Scope</p>
+    <p id="scripture" class="scripture" aria-live="polite"></p>
+  </header>
+
+  <main class="container">
+    <section id="subs" class="grid cards" role="list" aria-label="Subscriptions">
+      <article class="card" role="listitem">
+        <img src="assets/shield-cross.png" alt="" class="card__icon">
+        <h3>Crown Words</h3>
+        <p class="small">Daily words, devotion prompts, and declarations.</p>
+        <a class="btn btn-primary" target="_self" rel="noopener" href="https://buy.stripe.com/eVqcN70fu5chfNb1Yz0M00">Subscribe · €5/month</a>
+      </article>
+
+      <article class="card" role="listitem">
+        <img src="assets/angel.png" alt="" class="card__icon">
+        <h3>Eternal Investment Tracker</h3>
+        <p class="small">Stewardship tools for cashflow, goals, and giving.</p>
+        <a class="btn btn-primary" target="_self" rel="noopener" href="https://buy.stripe.com/6oUdRb5zO7kp58xbz90M01">Subscribe · €7/month</a>
+      </article>
+
+      <article class="card" role="listitem">
+        <img src="assets/angel.png" alt="" class="card__icon">
+        <h3>Worship Companion</h3>
+        <p class="small">Scripture-backed prayers, psalms, and audio guides.</p>
+        <a class="btn btn-primary" target="_self" rel="noopener" href="https://buy.stripe.com/dRm7sNaU834930pgTt0M02">Subscribe · €10/month</a>
+      </article>
+    </section>
+
+    <section id="about" class="card about">
+      <h3>About Crown Words Labs</h3>
+      <p>Faith-led tools for the modern age. Built by David Kwagala to serve Word, Wealth, and Worship with excellence and simplicity.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__brand">
+      <img src="assets/shield-cross.png" alt="" class="footer__logo">
+      <span>GOD’S KINGDOM — Established Beyond Scope · Powered by Jesus Christ</span>
+    </div>
+    <div class="footer__links">
+      <a href="#" aria-disabled="true">Privacy (coming soon)</a>
+      <a href="#" aria-disabled="true">Terms (coming soon)</a>
+    </div>
+  </footer>
+
+  <script>
+  const verses = [
+    'Romans 1:17 — The righteous shall live by faith.',
+    'Psalm 91 — He who dwells in the shelter of the Most High…',
+    'Isaiah 54:17 — No weapon formed against you shall prosper.',
+    '1 Cor 15:57 — Thanks be to God, who gives us the victory through our Lord Jesus Christ.',
+    'John 4:24 — God is Spirit; worship in Spirit and truth.',
+    'Philippians 4:13 — I can do all things through Christ who strengthens me.'
+  ];
+  let i = 0;
+  const el = document.getElementById('scripture');
+  function showVerse(){
+    el.textContent = verses[i % verses.length];
+    i++;
+  }
+  showVerse();
+  setInterval(showVerse, 8000);
+  </script>
 </body>
 </html>
