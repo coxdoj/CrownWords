@@ -154,3 +154,83 @@
 git add .
 git commit -m "add crownwords site scaffold"
 git push
+# Generate the icon-styled multi-page site and provide a ZIP
+import os, zipfile
+
+site_dir = "/mnt/data/crown_words_site_icons"
+os.makedirs(site_dir, exist_ok=True)
+
+base_style = """
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; 
+         margin: 24px; line-height: 1.5; }
+  nav { margin: 12px 0 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+  nav a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px; 
+          border: 1px solid #e5e5e7; border-radius: 8px; text-decoration: none; color: #111; }
+  nav a:hover { background: #f6f6f7; }
+  .yt { background: #FF0000; color: #fff; border-color: #FF0000; }
+  .yt svg { fill: #fff; }
+  svg { width: 18px; height: 18px; fill: #111; }
+  footer { margin-top: 40px; font-size: 12px; color: #666; }
+"""
+
+icons = {
+"home": '<svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3z"/></svg>',
+"info": '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>',
+"shield": '<svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3z"/></svg>',
+"doc": '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
+"mail": '<svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6 12 13 2 6"/></svg>',
+"yt": '<svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.12C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.391.566a2.994 2.994 0 0 0-2.107 2.12C0 8.09 0 12 0 12s0 3.91.502 5.814a2.994 2.994 0 0 0 2.107 2.12C4.495 20.5 12 20.5 12 20.5s7.505 0 9.391-.566a2.994 2.994 0 0 0 2.107-2.12C24 15.91 24 12 24 12s0-3.91-.502-5.814zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>'
+}
+
+def nav_html():
+    return f"""
+    <nav>
+      <a href="index.html">{icons['home']}<span>Home</span></a>
+      <a href="about.html">{icons['info']}<span>About</span></a>
+      <a href="privacy.html">{icons['shield']}<span>Privacy</span></a>
+      <a href="terms.html">{icons['doc']}<span>Terms</span></a>
+      <a href="contact.html">{icons['mail']}<span>Contact</span></a>
+      <a href="https://www.youtube.com/@KwagalaDavid1" target="_blank" class="yt">{icons['yt']}<span>YouTube</span></a>
+    </nav>
+    """
+
+def wrap_html(title, body):
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <style>{base_style}</style>
+</head>
+<body>
+  <h1>{title}</h1>
+  {nav_html()}
+  {body}
+  <footer>© Crown Words Labs • Built by David Kwagala</footer>
+</body>
+</html>"""
+
+pages = {
+"index.html": wrap_html("Crown Words Labs | Word · Wealth · Worship",
+                        "<p>Faith-led tools for the modern age.</p>"),
+"about.html": wrap_html("About • Crown Words Labs",
+                        "<p>Crown Words Labs builds simple, faith-led tools. Word • Wealth • Worship.</p>"),
+"privacy.html": wrap_html("Privacy Policy • Crown Words Labs",
+                          "<p>This static site does not collect personal data or use cookies by default.</p>"),
+"terms.html": wrap_html("Terms & Conditions • Crown Words Labs",
+                        "<p>Use this website lawfully. Content is provided as-is without warranty.</p>"),
+"contact.html": wrap_html("Contact • Crown Words Labs",
+                          "<p>Contact via GitHub or the YouTube channel.</p>"),
+}
+
+for name, content in pages.items():
+    with open(os.path.join(site_dir, name), "w") as f:
+        f.write(content)
+
+zip_path = "/mnt/data/crown_words_site_icons.zip"
+with zipfile.ZipFile(zip_path, "w") as z:
+    for fn in pages:
+        z.write(os.path.join(site_dir, fn), arcname=fn)
+
+zip_path
