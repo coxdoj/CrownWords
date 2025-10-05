@@ -17,13 +17,9 @@
 <body>
   <header class="hero">
     <div class="hero__social">
-  <a href="https://instagram.com/crownwords.jc" target="_blank" aria-label="Instagram">
-    Instagram
-  </a>
-  <a href="https://youtube.com/@Crownwords" target="_blank" aria-label="YouTube">
-    YouTube
-  </a>
-</div>
+      <a href="https://instagram.com/crownwords.jc" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      <a href="https://youtube.com/@Crownwords" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+    </div>
     <div class="hero__bar">
       <img src="assets/dk-logo.png" alt="David Kwagala" class="hero__logo hero__logo--left">
       <img src="assets/crown-words-labs.png" alt="Crown Words Labs" class="hero__logo hero__logo--center">
@@ -37,40 +33,26 @@
     <p class="hero__tag">God’s Kingdom — Established Beyond Scope</p>
     <p id="scripture" class="scripture" aria-live="polite"></p>
   </header>
-<section id="strength" class="card prayer">
-  <h3>Prayer of Strength and Covenant</h3>
-  <p><strong>“Open the heavens, O Lord.”</strong> <em>(Isaiah 64:1)</em></p>
-  <p><strong>Your unfailing love sustains me.</strong> <em>(Psalm 36:7)</em></p>
-  <p><strong>I call with the Spirit of grace and supplication.</strong> <em>(Zechariah 12:10 · Romans 8:26)</em></p>
-  <p><strong>Defend me from evil spirits and confusion.</strong> <em>(Psalm 91:10-11 · 1 Cor 14:33)</em></p>
-  <p><strong>I run to the eternal peace of Jesus Christ.</strong> <em>(John 14:27 · Philippians 4:7)</em></p>
-  <p><strong>You are the Root and Offspring of Jesse.</strong> <em>(Isaiah 11:1 · Revelation 22:16)</em></p>
-  <p><strong>Arise, Spirit of God.</strong> <em>(Psalm 68:1)</em></p>
-  <p><strong>Guard me, O angels instructed by Your hand.</strong> <em>(Psalm 34:7)</em></p>
-  <p><strong>God of Abraham, Jacob, and Moses, remember Your covenant.</strong> <em>(Exodus 3:6)</em></p>
-  <p><strong>Jesus Christ, Mediator of Life, guide my path.</strong> <em>(1 Timothy 2:5 · John 14:6)</em></p>
-  <p><strong>Eternal Judge, grant me Your crown of righteousness.</strong> <em>(2 Timothy 4:8)</em></p>
-  <p><strong>You called me by name — Kwagala (Love).</strong> <em>(1 John 4:8 · Isaiah 43:1)</em></p>
-</section>
+
   <main class="container">
     <section id="subs" class="grid cards" role="list" aria-label="Subscriptions">
       <article class="card" role="listitem">
         <img src="assets/shield-cross.png" alt="" class="card__icon">
         <h3>Crown Words</h3>
         <p class="small">Daily words, devotion prompts, and declarations.</p>
-        <a class="btn btn-primary" target="_self" rel="noopener" href="https://buy.stripe.com/eVqcN70fu5chfNb1Yz0M00">Subscribe · €5/month</a>
+        <a class="btn btn-primary" href="https://buy.stripe.com/eVqcN70fu5chfNb1Yz0M00">Subscribe · €5/month</a>
       </article>
       <article class="card" role="listitem">
         <img src="assets/angel.png" alt="" class="card__icon">
         <h3>Eternal Investment Tracker</h3>
         <p class="small">Stewardship tools for cashflow, goals, and giving.</p>
-        <a class="btn btn-primary" target="_self" rel="noopener" href="https://buy.stripe.com/6oUdRb5zO7kp58xbz90M01">Subscribe · €7/month</a>
+        <a class="btn btn-primary" href="https://buy.stripe.com/6oUdRb5zO7kp58xbz90M01">Subscribe · €7/month</a>
       </article>
       <article class="card" role="listitem">
         <img src="assets/angel.png" alt="" class="card__icon">
         <h3>Worship Companion</h3>
         <p class="small">Scripture-backed prayers, psalms, and audio guides.</p>
-        <a class="btn btn-primary" target="_self" rel="noopener" href="https://buy.stripe.com/dRm7sNaU834930pgTt0M02">Subscribe · €10/month</a>
+        <a class="btn btn-primary" href="https://buy.stripe.com/dRm7sNaU834930pgTt0M02">Subscribe · €10/month</a>
       </article>
     </section>
 
@@ -88,163 +70,24 @@
     <div class="footer__links">
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
+      <a href="https://instagram.com/crownwords.jc" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@Crownwords" target="_blank" rel="noopener">YouTube</a>
     </div>
   </footer>
 
   <script>
-  const verses = [
-    'Romans 1:17 — The righteous shall live by faith.',
-    'Psalm 91 — He who dwells in the shelter of the Most High…',
-    'Isaiah 54:17 — No weapon formed against you shall prosper.',
-    '1 Cor 15:57 — Thanks be to God, who gives us the victory through our Lord Jesus Christ.',
-    'John 4:24 — God is Spirit; worship in Spirit and truth.',
-    'Philippians 4:13 — I can do all things through Christ who strengthens me.'
-  ];
-  let i = Math.floor(Math.random()*verses.length);
-  const el = document.getElementById('scripture');
-  function showVerse(){ el.textContent = verses[i % verses.length]; i++; }
-  showVerse(); setInterval(showVerse, 8000);
+    const verses = [
+      'Romans 1:17 — The righteous shall live by faith.',
+      'Psalm 91 — He who dwells in the shelter of the Most High…',
+      'Isaiah 54:17 — No weapon formed against you shall prosper.',
+      '1 Cor 15:57 — Thanks be to God, who gives us the victory through our Lord Jesus Christ.',
+      'John 4:24 — God is Spirit; worship in Spirit and truth.',
+      'Philippians 4:13 — I can do all things through Christ who strengthens me.'
+    ];
+    let i = Math.floor(Math.random() * verses.length);
+    const el = document.getElementById('scripture');
+    function showVerse() { el.textContent = verses[i % verses.length]; i++; }
+    showVerse(); setInterval(showVerse, 8000);
   </script>
 </body>
 </html>
-<footer class="site-footer">
-  <div class="footer__brand">
-    <img src="assets/shield-cross.png" alt="" class="footer__logo">
-    <span>GOD’S KINGDOM — Established Beyond Scope · Powered by Jesus Christ</span>
-  </div>
-  <div class="footer__links">
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <!-- Social links -->
-    <a href="https://instagram.com/crownwords.jc" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://youtube.com/@Crownwords" target="_blank" rel="noopener">YouTube</a>
-  </div>
-</footer>
-<section id="about" class="card about">
-  <h3>About Crown Words Labs</h3>
-  <p>Faith-led tools for the modern age. Built by David Kwagala to serve Word, Wealth, and Worship with excellence and simplicity.</p>
-</section>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crown Words Labs</title>
-</head>
-<body>
-  <h1>🌟 Crown Words Labs</h1>
-  <p>Faith-led tools for the modern age.</p>
-  <nav>
-    <a href="about.html">About</a> | 
-    <a href="contact.html">Contact</a>
-  </nav>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CrownWords - Substack Integration</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    iframe {
-      width: 100%;
-      height: 90vh;
-      border: none;
-    }
-  </style>
-</head>
-<body>
-  <h1>✨ CrownWords: David Kwagala ✨</h1>
-  <iframe src="https://substack.com/@davidkwagala"></iframe>
-</body>
-</html>
-git add .
-git commit -m "add crownwords site scaffold"
-git push
-# Generate the icon-styled multi-page site and provide a ZIP
-import os, zipfile
-
-site_dir = "/mnt/data/crown_words_site_icons"
-os.makedirs(site_dir, exist_ok=True)
-
-base_style = """
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; 
-         margin: 24px; line-height: 1.5; }
-  nav { margin: 12px 0 24px; display: flex; flex-wrap: wrap; gap: 12px; }
-  nav a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px; 
-          border: 1px solid #e5e5e7; border-radius: 8px; text-decoration: none; color: #111; }
-  nav a:hover { background: #f6f6f7; }
-  .yt { background: #FF0000; color: #fff; border-color: #FF0000; }
-  .yt svg { fill: #fff; }
-  svg { width: 18px; height: 18px; fill: #111; }
-  footer { margin-top: 40px; font-size: 12px; color: #666; }
-"""
-
-icons = {
-"home": '<svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3z"/></svg>',
-"info": '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>',
-"shield": '<svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3z"/></svg>',
-"doc": '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
-"mail": '<svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6 12 13 2 6"/></svg>',
-"yt": '<svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.12C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.391.566a2.994 2.994 0 0 0-2.107 2.12C0 8.09 0 12 0 12s0 3.91.502 5.814a2.994 2.994 0 0 0 2.107 2.12C4.495 20.5 12 20.5 12 20.5s7.505 0 9.391-.566a2.994 2.994 0 0 0 2.107-2.12C24 15.91 24 12 24 12s0-3.91-.502-5.814zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>'
-}
-
-def nav_html():
-    return f"""
-    <nav>
-      <a href="index.html">{icons['home']}<span>Home</span></a>
-      <a href="about.html">{icons['info']}<span>About</span></a>
-      <a href="privacy.html">{icons['shield']}<span>Privacy</span></a>
-      <a href="terms.html">{icons['doc']}<span>Terms</span></a>
-      <a href="contact.html">{icons['mail']}<span>Contact</span></a>
-      <a href="https://www.youtube.com/@KwagalaDavid1" target="_blank" class="yt">{icons['yt']}<span>YouTube</span></a>
-    </nav>
-    """
-
-def wrap_html(title, body):
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
-  <style>{base_style}</style>
-</head>
-<body>
-  <h1>{title}</h1>
-  {nav_html()}
-  {body}
-  <footer>© Crown Words Labs • Built by David Kwagala</footer>
-</body>
-</html>"""
-
-pages = {
-"index.html": wrap_html("Crown Words Labs | Word · Wealth · Worship",
-                        "<p>Faith-led tools for the modern age.</p>"),
-"about.html": wrap_html("About • Crown Words Labs",
-                        "<p>Crown Words Labs builds simple, faith-led tools. Word • Wealth • Worship.</p>"),
-"privacy.html": wrap_html("Privacy Policy • Crown Words Labs",
-                          "<p>This static site does not collect personal data or use cookies by default.</p>"),
-"terms.html": wrap_html("Terms & Conditions • Crown Words Labs",
-                        "<p>Use this website lawfully. Content is provided as-is without warranty.</p>"),
-"contact.html": wrap_html("Contact • Crown Words Labs",
-                          "<p>Contact via GitHub or the YouTube channel.</p>"),
-}
-
-for name, content in pages.items():
-    with open(os.path.join(site_dir, name), "w") as f:
-        f.write(content)
-
-zip_path = "/mnt/data/crown_words_site_icons.zip"
-with zipfile.ZipFile(zip_path, "w") as z:
-    for fn in pages:
-        z.write(os.path.join(site_dir, fn), arcname=fn)
-
-zip_path
