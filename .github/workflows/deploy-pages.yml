@@ -92,8 +92,9 @@ jobs:
             echo "build_dir=./_site" >> $GITHUB_OUTPUT
             echo "📁 Using _site/ directory"
           else
-            echo "build_dir=." >> $GITHUB_OUTPUT
-            echo "⚠️ No common build directory found, using root directory"
+            echo "❌ No common build output directory (dist, build, out, _site) found after build."
+            echo "Please check your build configuration and ensure your build outputs to one of these directories."
+            exit 1
           fi
 
       - name: Setup Pages
